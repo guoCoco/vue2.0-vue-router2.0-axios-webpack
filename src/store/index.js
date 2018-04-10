@@ -9,7 +9,15 @@ Vue.use(Vuex)
 const state = {
   count: 0,
   history: [],
-  mylist: '12345'
+  mylist: '12345',
+  info: {
+    id: 'guokeke'
+  },
+  todos: [
+    {id: 1, text: '看书', done: true},
+    {id: 2, text: '吃饭', done: false},
+    {id: 3, text: '睡觉', done: true}
+  ]
 }
 
 const store = new Vuex.Store({

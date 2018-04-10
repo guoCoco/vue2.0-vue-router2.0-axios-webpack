@@ -1,17 +1,17 @@
 <template>
-	<div>
-		{{msg}}
-	</div>
+  <div>
+    {{msg}}
+  </div>
 </template>
 <script>
 export default {
   data () {
-  	return {
-  	  msg: '111'
-  	}
+    return {
+      msg: '111'
+    }
   },
   created () {
-  	// this.msg = this.$store.state.mylist
+    this.msg = this.$store.state.mylist
   }
 }
 </script>
