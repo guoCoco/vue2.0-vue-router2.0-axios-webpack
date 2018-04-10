@@ -1,24 +1,24 @@
 <template>
   <div id='main'>
-    <Header/>
-    <div id="cont">ssss</div>
+    <myHeader/>
+    <img src="../../static/image/logo.png">
     <ul>
       <li v-for='(val, i) in list' v-bind:key='i'>
         <time v-text='val.create_at'></time>
-        <router-link :to="'/comtent/' + val.id">
+        <router-link :to="'/content/' + val.id">
           {{val.title}}
         </router-link>
       </li>
     </ul>
-    <Footer/>
+    <myFooter/>
   </div>
 
 </template>
 <script>
-import Header from '../components/header.vue'
-import Footer from '../components/footer.vue'
+import myHeader from '../components/header.vue'
+import myFooter from '../components/footer.vue'
 export default {
-  components: {Header, Footer},
+  components: {myHeader, myFooter},
   data () {
     return {
       list: []
@@ -34,13 +34,16 @@ export default {
     //   console.log(res)
     // })
     this.$http.get('/topics', null, (res) => {
-      console.log(res)
       this.list = res.data
     })
   },
   mounted () {
     let date = new Date()
     console.log(this.$utils.formatDate(date))
+    let num = this.$store.getters
+    console.log(num)
+    console.log(this.$store.state.mylist)
+    console.log(this.$store)
   }
 }
 </script>

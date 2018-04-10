@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import http from './http/index.js'
 import utils from './utils/index.js'
+import store from './store'
 
 Vue.prototype.$http = http
 Vue.prototype.$utils = utils
@@ -15,6 +16,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
