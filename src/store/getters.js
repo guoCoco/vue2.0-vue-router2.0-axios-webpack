@@ -1,16 +1,7 @@
-const count = state => state.count
-
-const limit = 5
-
-const recentHistory = state => {
-  const end = state.history.length
-  const begin = end - limit < 0 ? 0 : end - limit
-  return state.history
-    .slice(begin, end)
-    .join(', ')
+const doneTodos = state => {
+  return state.todos.filter(todo => todo.done)
 }
 
 export default {
-  count: count,
-  recentHistory: recentHistory
+  doneTodos: doneTodos
 }

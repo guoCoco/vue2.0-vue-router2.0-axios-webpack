@@ -9,8 +9,8 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      // name: 'Index',
+      path: '/index',
+      name: 'Index',
       component: Index
     },
     {
@@ -19,7 +19,17 @@ export default new Router({
     },
     {
       path: '/shop',
-      component: Shop
+      component: Shop,
+      beforeRouteEnter (to, from, next) {
+        next(vm => {
+          vm.$router.push({path: '/'})
+        })
+      }
+    },
+    {
+      path: '/',
+      // redirect: {name: 'Index'}
+      redirect: '/index'
     }
   ]
 })
