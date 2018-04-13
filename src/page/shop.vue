@@ -7,6 +7,7 @@
       <li v-for='(val, i) in dones' v-bind:key='i'>{{val.text}}</li>
     </ul>
     <button @click='gotoIndex'>导航到首页</button>
+    <mt-button type="primary">选择操作</mt-button>
   </div>
 </template>
 <script>
@@ -22,6 +23,7 @@ export default {
     }
   },
   created () {
+    this.$utils.setTitleBar('商品')
     this.msg = this.$store.state.mylist
     // this.$store.commit('increment')
     this.add()

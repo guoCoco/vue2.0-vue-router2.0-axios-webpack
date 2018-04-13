@@ -15,6 +15,12 @@ const formatDate = (date) => {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+const setTitleBar = function (text) {
+  var title = document.getElementsByTagName('title')[0]
+  title.text = text
+}
+
 module.exports = {
-  formatDate: formatDate
+  formatDate: formatDate,
+  setTitleBar: setTitleBar
 }

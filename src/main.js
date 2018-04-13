@@ -7,8 +7,14 @@ import http from './http/index.js'
 import utils from './utils/index.js'
 import store from './store'
 
+/* 按需引入部分组件 */
+import {Button} from 'mint-ui'
+
 Vue.prototype.$http = http
 Vue.prototype.$utils = utils
+
+/* 注册全局组件 */
+Vue.component(Button.name, Button)
 
 Vue.config.productionTip = false
 
