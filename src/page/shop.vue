@@ -7,7 +7,7 @@
       <li v-for='(val, i) in dones' v-bind:key='i'>{{val.text}}</li>
     </ul>
     <button @click='gotoIndex'>导航到首页</button>
-    <mt-button type="primary">选择操作</mt-button>
+    <!-- <mt-button type="primary">选择操作</mt-button> -->
   </div>
 </template>
 <script>
